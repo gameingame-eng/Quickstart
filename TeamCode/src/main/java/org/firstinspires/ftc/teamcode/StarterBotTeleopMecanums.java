@@ -265,8 +265,14 @@ public class StarterBotTeleopMecanums extends OpMode {
         /*
          * Show the state and motor powers
          */
+
+
+
         telemetry.addData("State", launchState);
+        telemetry.addData("Intake State", intakeOn ? "ON" : "OFF");
+        telemetry.addData("OuttakeState", Outtake ? "ON" : "OFF");
         telemetry.addData("motorSpeed", launcher.getVelocity());
+        telemetry.update();
 
     }
 

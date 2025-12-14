@@ -26,3 +26,10 @@ android {
 dependencies {
     implementation project(':FtcRobotController')
 }
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.PedroPathing:PedroPathing:VERSION'
+}
