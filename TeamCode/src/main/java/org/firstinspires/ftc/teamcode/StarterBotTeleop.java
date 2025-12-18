@@ -120,7 +120,8 @@ public class StarterBotTeleop extends OpMode {
         leftFeeder.setDirection(DcMotorSimple.Direction.REVERSE);
         rightFeeder.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        telemetry.addData("Status", "Initialized");
+        telemetry.addData("Tiggerbot", "Initialized");
+        telemetry.addData("Ready for comp", " ");
     }
 
     /*

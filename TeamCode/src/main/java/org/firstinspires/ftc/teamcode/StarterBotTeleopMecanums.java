@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (c) 2025 FIRST
  * All rights reserved.
  *
@@ -57,7 +57,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Since the dynamics of a launcher wheel system varies greatly from those of most other FTC mechanisms,
  * we will also need to adjust the "PIDF" coefficients with some that are a better fit for our application.
  */
-
 @TeleOp(name = "StarterBotTeleopMecanums", group = "StarterBot")
 //@Disabled
 public class StarterBotTeleopMecanums extends OpMode {
@@ -193,7 +192,7 @@ public class StarterBotTeleopMecanums extends OpMode {
         /*
          * Tell the driver that initialization is complete.
          */
-        telemetry.addData("Status", "Initialized");
+        telemetry.addData("Tiggerbot Status", "Initialized");
     }
 
     /*
@@ -201,6 +200,7 @@ public class StarterBotTeleopMecanums extends OpMode {
      */
     @Override
     public void init_loop() {
+
     }
 
     /*
@@ -220,7 +220,7 @@ public class StarterBotTeleopMecanums extends OpMode {
         boolean OuttakeButtonA = gamepad1.a || gamepad2.a;
 
         // Check for a rising edge (just pressed)
-        if (currentIntakeButtonX && !prevIntakeButtonX) {
+        if (currentIntakeButtonX && !prevIntakeButtonX) { // 
             // Flip the state of the intake
             intakeOn = !intakeOn;
         }
@@ -281,6 +281,7 @@ public class StarterBotTeleopMecanums extends OpMode {
      */
     @Override
     public void stop() {
+        telemetry.addData("match is over my sire", "You are my god");
     }
 
     void mecanumDrive(double forward, double strafe, double rotate){
@@ -308,7 +309,7 @@ public class StarterBotTeleopMecanums extends OpMode {
             case IDLE:
                 if (shotRequested) {
                     launchState = LaunchState.SPIN_UP;
-                }
+                } 
                 break;
             case SPIN_UP:
                 launcher.setVelocity(LAUNCHER_TARGET_VELOCITY);

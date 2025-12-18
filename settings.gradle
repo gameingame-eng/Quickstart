@@ -1,2 +1,23 @@
+// settings.gradle
+pluginManagement {
+    repositories {google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Repository for libraries hosted on JitPack
+        maven { url 'https://jitpack.io' }
+        // Repository for byLazar libraries
+        maven { url 'https://mymaven.bylazar.com/releases' }
+    }
+}
+
+rootProject.name = "ftccode"
 include ':FtcRobotController'
 include ':TeamCode'
