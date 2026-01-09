@@ -22,6 +22,10 @@ android {
 dependencies {
     implementation project(':FtcRobotController')
 
-    // REMOVE THIS LINE - It is causing the 401 error and is likely incorrect.
-    // implementation 'com.github.Pedroacp:PedroPathing:2.0.4'
+// Core Pedro Pathing 2.0.5
+    implementation 'com.pedropathing:ftc:2.0.5'
+
+    // Required Telemetry & Helper Libraries
+    implementation 'com.pedropathing:telemetry:1.0.0'
+    implementation 'com.bylazar:fullpanels:1.0.6'
 }

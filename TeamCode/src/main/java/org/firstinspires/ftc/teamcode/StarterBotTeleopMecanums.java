@@ -70,8 +70,11 @@ public class StarterBotTeleopMecanums extends OpMode {
      * velocity. Here we are setting the target, and minimum velocity that the launcher should run
      * at. The minimum velocity is a threshold for determining when to fire.
      */
-    final double LAUNCHER_TARGET_VELOCITY = 1400;
-    final double LAUNCHER_MIN_VELOCITY = 1200;
+    final double LAUNCHER_TARGET_VELOCITY = 1100;
+    final double LAUNCHER_MIN_VELOCITY = 1000;
+    final double LAUNCHER_WORKING = 0;
+
+
 
     // Declare OpMode members.
     private DcMotor leftFrontDrive = null;
@@ -215,6 +218,7 @@ public class StarterBotTeleopMecanums extends OpMode {
      */
     @Override
     public void loop() {
+        launcher.setVelocity(LAUNCHER_WORKING);
 
         boolean currentIntakeButtonX = gamepad1.x || gamepad2.x;
         boolean OuttakeButtonA = gamepad1.a || gamepad2.a;
@@ -252,24 +256,22 @@ public class StarterBotTeleopMecanums extends OpMode {
          * both motors work to rotate the robot. Combinations of these inputs can be used to create
          * more complex maneuvers.
          */
-        mecanumDrive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+        mecanumDrive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x );
+        mecanumDrive(-gamepad2.left_stick_y, gamepad2.left_stick_x, gamepad2.right_stick_x );
 
         /*
          * Here we give the user control of the speed of the launcher motor without automatically
          * queuing a shot.
          */
-        if (gamepad1.right_bumper) { // spin up flywheel
+        if (gamepad1.left_trigger > 0.2 || gamepad2.left_trigger > 0.2) { // spin up flywheel
             launcher.setVelocity(LAUNCHER_TARGET_VELOCITY);
-        } else if (gamepad1.b) { // stop flywheel
-            launcher.setVelocity(STOP_SPEED);
-        }
-        if (gamepad1.left_stick_button) {
-            launcher.setVelocity(LAUNCHER_TARGET_VELOCITY);
+        } else if (gamepad1.b || gamepad2.b) { // stop flywheel
+            launcher.setVelocity(LAUNCHER_WORKING);
         }
         /*
          * Now we call our "Launch" function.
          */
-        launch(gamepad1.rightBumperWasPressed());
+        launch(gamepad1.right_trigger > 0.2 || gamepad2.right_trigger > 0.2);
 
         /*
          * Show the state and motor powers
