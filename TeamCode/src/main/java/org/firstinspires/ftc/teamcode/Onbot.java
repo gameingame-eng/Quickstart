@@ -253,7 +253,8 @@ public class Onbot extends OpMode {
          * both motors work to rotate the robot. Combinations of these inputs can be used to create
          * more complex maneuvers.
          */
-        mecanumDrive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+        double forward = 2.75;
+        mecanumDrive(-gamepad1.left_stick_y * forward, gamepad1.left_stick_x * forward, gamepad1.right_stick_x * forward);
 
         /*
          * Here we give the user control of the speed of the launcher motor without automatically
