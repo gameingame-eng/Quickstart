@@ -57,7 +57,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Since the dynamics of a launcher wheel system varies greatly from those of most other FTC mechanisms,
  * we will also need to adjust the "PIDF" coefficients with some that are a better fit for our application.
  */
-@TeleOp(name = "FinalTeleOP", group = "FinalCode")
+@TeleOp(name = "FinalTeleOp", group = "FinalCode")
 //@Disabled
 public class Onbot extends OpMode {
     final double FEED_TIME_SECONDS = 0.20; //The feeder servos run this long when a shot is requested.
