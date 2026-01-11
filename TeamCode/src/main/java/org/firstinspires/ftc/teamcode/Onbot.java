@@ -278,11 +278,17 @@ public class Onbot extends OpMode {
          */
 
 
-
-        telemetry.addData("State", launchState);
+        telemetry.addData("Status", "Running");
+        telemetry.addData("Bot Statistics", "");
+        telemetry.addData("Launcher State", launchState);
         telemetry.addData("Intake State", intakeOn ? "ON" : "OFF");
         telemetry.addData("OuttakeState", Outtake ? "ON" : "OFF");
-        telemetry.addData("motorSpeed", launcher.getVelocity());
+        telemetry.addData("Flywheel Speed", launcher.getVelocity());
+        telemetry.addData("Intake Power", intake.getPower());
+        telemetry.addData("Left Front Power", leftFrontPower);
+        telemetry.addData("Right Front Power", rightFrontPower);
+        telemetry.addData("Left Back Power", leftBackPower);
+        telemetry.addData("Right Back Power", rightBackPower);
         telemetry.update();
 
     }
