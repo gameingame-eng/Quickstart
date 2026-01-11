@@ -2,13 +2,13 @@ import java.text.SimpleDateFormat
 
 //
 // build.gradle in FtcRobotController
-//
+// I AM STEVE AND YOU WILL NOT EVER QUESTION IT MUAHAHHAHAHAHHAHHAHAHAHAHAHAHHHAHAHA
 apply plugin: 'com.android.library'
 
 android {
 
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 24 // how about "67"?
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 28
         buildConfigField "String", "APP_BUILD_TIME", '"' + (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ROOT).format(new Date())) + '"'

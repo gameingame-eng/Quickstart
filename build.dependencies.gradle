@@ -1,9 +1,4 @@
-repositories {
-    mavenCentral()
-    google() // Needed for androidx
-    maven { url = "https://mymaven.bylazar.com/releases" }
-}
-
+// Repositories are now defined in settings.gradle
 dependencies {
     implementation 'org.firstinspires.ftc:Inspection:11.0.0'
     implementation 'org.firstinspires.ftc:Blocks:11.0.0'
@@ -19,4 +14,3 @@ dependencies {
     implementation 'com.pedropathing:telemetry:1.0.0'
     implementation 'com.bylazar:fullpanels:1.0.9'
 }
-
